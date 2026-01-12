@@ -18,7 +18,7 @@ export default function Home() {
     <div className="app">
       <div className="header">
         <h1 className="title">Plataforma de Análisis Estratégico para táctica empresarial completa</h1>
-        <p className="subtitle">Selecciona un módulo para comenzar</p>
+        <p className="subtitle">Dashboard Ejecutivo — Usuario autenticado: demo@empresa.com</p>
       </div>
 
       <div className="grid">
@@ -37,6 +37,22 @@ export default function Home() {
           onEstrategias={() => navigate('/estrategias')}
           onDashboard={() => navigate('/dashboard')}
         />
+      </div>
+
+      <div style={{ width: '100%', maxWidth: 980 }}>
+        <h3 style={{ marginTop: 16 }}>Alertas recientes</h3>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridAutoRows: '100px' }}>
+          <div className="card"><h3>Finanzas</h3><p>Desviación de presupuesto</p></div>
+          <div className="card"><h3>Producción</h3><p>Tiempo de ciclo elevado</p></div>
+          <div className="card"><h3>Marketing</h3><p>ROI campaña bajo</p></div>
+        </div>
+
+        <h3 style={{ marginTop: 16 }}>Actividad reciente</h3>
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gridAutoRows: '100px' }}>
+          <div className="card"><h3>Estrategias activas</h3><p>3 actualizadas hoy</p></div>
+          <div className="card"><h3>Tareas por módulo</h3><p>12 pendientes</p></div>
+          <div className="card"><h3>Recomendaciones rápidas</h3><p>2 nuevas</p></div>
+        </div>
       </div>
     </div>
   )
