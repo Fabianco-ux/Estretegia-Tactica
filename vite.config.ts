@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH ?? '/'
+  // Fijamos la base para GitHub Pages en este repo
+  base: '/Estretegia-Tactica/'
 })
