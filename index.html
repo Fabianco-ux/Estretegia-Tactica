@@ -8,6 +8,17 @@
     <link rel="stylesheet" crossorigin href="/Estretegia-Tactica/assets/index-FnjLOQw3.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        var path = window.location.pathname;
+        // Si se está en GitHub Pages pero la configuración apunta a main,
+        // redirige al path correcto del repo para evitar 404 a /src/main.tsx
+        if (host.endsWith('github.io') && path.indexOf('/Estretegia-Tactica/') === -1) {
+          window.location.replace('/Estretegia-Tactica/');
+        }
+      })();
+    </script>
   </body>
 </html>
