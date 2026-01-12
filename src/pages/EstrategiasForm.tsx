@@ -42,6 +42,18 @@ export default function EstrategiasForm() {
     navigate('/estrategias/lista')
   }
 
+  const generarIA = () => {
+    const entry = {
+      fecha: new Date().toISOString(),
+      ...analysis,
+    }
+    // Guardar en historial local del modelo
+    const next = { ...model, analisis: [...(model.analisis ?? []), entry] }
+    setModel(next)
+    saveStrategy(next)
+    alert('Recomendación IA generada y guardada en el historial')
+  }
+
   const analysis = useMemo(() => {
     const resumen = `Estrategia ${model.nombre} para ${model.modulo}`
     const riesgos = model.impacto?.riesgo ? `Riesgo: ${model.impacto.riesgo}` : 'Riesgos moderados'
@@ -265,6 +277,9 @@ export default function EstrategiasForm() {
             <div>Recomendaciones: {analysis.recomendaciones}</div>
             <div>Priorización: {analysis.prioridad}</div>
             <div>Indicadores sugeridos: {analysis.indicadores}</div>
+          </div>
+          <div className="actions" style={{ justifyContent: 'flex-end', marginTop: 8 }}>
+            <button type="button" className="btn" onClick={generarIA}>Generar recomendación IA</button>
           </div>
         </div>
 

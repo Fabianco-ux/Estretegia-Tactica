@@ -4,6 +4,7 @@ import ModuleForm from './pages/ModuleForm'
 import EstrategiasForm from './pages/EstrategiasForm'
 import DashboardForm from './pages/DashboardForm'
 import StrategyList from './pages/StrategyList'
+import IAConsult from './pages/IAConsult'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Route path="/modulo/:key" element={<ModuleForm />} />
       <Route path="/estrategias/lista" element={<StrategyList />} />
       <Route path="/estrategias" element={<EstrategiasForm />} />
+      <Route path="/ia" element={<IAConsult />} />
       <Route path="/dashboard" element={<DashboardForm />} />
     </Routes>
   )
